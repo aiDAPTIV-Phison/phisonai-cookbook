@@ -13,6 +13,7 @@
 - Approved answer:
   1. `Llama-Guard-3-8B 與 tw-ptt-keyboard-warrior-chat 資料集都是受限（gated）資源。請在登入狀態下開啟該模型或資料集在 Hugging Face 上的頁面，接受授權條款，並等待存取權限核准。`
   2. `接著在執行環境用 hf auth login 登入，或將 HF_TOKEN 環境變數設為同一個帳號的 token，然後重新執行該 cell。`
+  3. `llm-ocr-ft.ipynb 用的 Qwen3-VL-4B-Instruct 與 MathWriting-human 資料集都是公開資源，不會出現這個錯誤，也不需要另外申請授權。`
 - Escalate to Jira when:
   - 已在 Hugging Face 頁面取得存取權限，重新登入後錯誤仍然存在
   - 錯誤訊息與上述不符
@@ -28,10 +29,11 @@
   - `max_length`
 - Approved answer:
   1. `重新啟動 kernel，釋放先前執行佔用的 GPU 記憶體，再從第一個 cell 開始依序執行。`
-  2. `調低訓練設定 cell 中的 max_length（預設為 1024）。兩本 notebook 的每張 GPU batch size 已經是 1，所以縮短序列長度是剩下主要可以降低的設定。`
-  3. `若仍然失敗，請改用記憶體更大的 GPU。classification notebook 載入 8B 參數的模型，需要的記憶體比載入 4B 參數模型的 style notebook 更多。`
+  2. `classification 與 style notebook：調低訓練設定 cell 中的 max_length（預設為 1024）。這兩本的每張 GPU batch size 已經是 1，所以縮短序列長度是剩下主要可以降低的設定。`
+  3. `ocr notebook：這本的 max_length 設為 None（不截斷，避免切掉圖片 token），無法用縮短序列長度的方式降低記憶體。請改把 per_device_train_batch_size 從預設的 2 調低到 1，並把 gradient_accumulation_steps 等比例調高（例如從 8 調成 16），維持相同的有效 batch size。`
+  4. `若仍然失敗，請改用記憶體更大的 GPU。classification notebook 載入 8B 參數的模型，需要的記憶體比載入 4B 參數模型的 style / ocr notebook 更多。`
 - Escalate to Jira when:
-  - 已縮短 max_length 且使用記憶體充足的 GPU，仍然發生記憶體不足
+  - 已依上述方式調整（縮短 max_length，或調低 per_device_train_batch_size）且使用記憶體充足的 GPU，仍然發生記憶體不足
   - 錯誤訊息與上述不符
 
 ## Q: 執行完安裝 cell 後出現 ImportError 或 bitsandbytes 相關錯誤，該怎麼辦？

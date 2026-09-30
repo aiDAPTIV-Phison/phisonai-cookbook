@@ -1,11 +1,12 @@
 # llm-notebooks
 
-兩本 Jupyter notebook，並排展示單張 GPU 的 QLoRA 微調會讓 LLM 的行為產生什麼變化。每本 notebook 都用同樣的輸入分別在微調前後各跑一次，讓差異一眼可見。
+三本 Jupyter notebook，並排展示單張 GPU 的 QLoRA 微調會讓 LLM 的行為產生什麼變化。每本 notebook 都用同樣的輸入分別在微調前後各跑一次，讓差異一眼可見。
 
 | Notebook | 基底模型 | 資料集 | 展示內容 |
 |---|---|---|---|
 | [notebooks/llm-classification-ft.ipynb](notebooks/llm-classification-ft.ipynb) | `meta-llama/Llama-Guard-3-8B` | `ai4privacy/pii-masking-65k`（訓練）、`ai4privacy/pii-masking-200k`（驗證） | 讓 guard 模型能在同一段文字中辨識多重 PII（個資）違規，並比較微調前後的 F1、precision、recall 與 confusion matrix。 |
 | [notebooks/llm-style-ft.ipynb](notebooks/llm-style-ft.ipynb) | `Qwen/Qwen3-4B-Instruct-2507` | `lianghsun/tw-ptt-keyboard-warrior-chat` | 讓聊天模型學會台灣 PTT 鄉民的說話風格，並對照同一組 prompt 在微調前後的回覆。 |
+| [notebooks/llm-ocr-ft.ipynb](notebooks/llm-ocr-ft.ipynb) | `Qwen/Qwen3-VL-4B-Instruct` | `deepcopy/MathWriting-human` | 讓視覺語言模型把手寫數學算式圖片轉成 LaTeX，並在測試資料上比較微調前後的 exact match 與字元錯誤率（CER），展示微調前答錯、微調後答對的例子。 |
 
 ## 本專案不包含
 
@@ -20,6 +21,7 @@
 - 已接受下列受限資源授權條款的 Hugging Face 帳號：
   - <https://huggingface.co/meta-llama/Llama-Guard-3-8B>
   - <https://huggingface.co/datasets/lianghsun/tw-ptt-keyboard-warrior-chat>
+  - `llm-ocr-ft.ipynb` 用的模型與資料集皆為公開資源，不需要額外的授權
 
 ## 快速開始
 
@@ -36,6 +38,7 @@ jupyter lab notebooks/
 
 - Classification：`transformers trl peft bitsandbytes accelerate datasets huggingface_hub scikit-learn matplotlib tqdm`
 - Style：`transformers trl peft bitsandbytes accelerate datasets huggingface_hub`
+- OCR：`transformers trl peft bitsandbytes accelerate datasets pillow`
 
 請依序執行各個 cell。訓練產出（adapter、合併後的模型、圖表）會寫到啟動 Jupyter 的目錄下的 `outputs/` 資料夾。
 
