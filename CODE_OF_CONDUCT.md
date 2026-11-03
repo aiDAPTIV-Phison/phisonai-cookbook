@@ -1,40 +1,42 @@
-# 行為準則
+English | [繁體中文](CODE_OF_CONDUCT.zh-TW.md)
 
-## 我們的承諾
+# Code of Conduct
 
-我們希望每一位參與本專案的人，都能在友善、不受騷擾的環境中參與，不論年齡、體型、身心障礙、族裔、性別認同與表達、經驗程度、國籍、外貌、種族、宗教或性傾向。
+## Our pledge
 
-## 期望的行為
+We want everyone who takes part in this project to do so in a friendly, harassment-free environment, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual orientation.
 
-- 保持友善與耐心，尤其是對剛接觸微調或開源專案的新手。
-- 預設對方出於善意，批評之前先提問釐清。
-- 以建設性的態度給予並接受回饋。
-- 討論聚焦於主題：notebook、實驗結果，以及如何改進。
-- 尊重他人的貢獻，並遵守本專案所用模型與資料集的授權條款。
+## Expected behavior
 
-## 不可接受的行為
+- Be friendly and patient, especially with people who are new to fine-tuning or to open source.
+- Assume good intent, and ask clarifying questions before criticizing.
+- Give and accept feedback constructively.
+- Keep discussions on topic: the notebooks, the experimental results, and how to improve them.
+- Respect other people's contributions, and follow the license terms of the models and datasets this project uses.
 
-- 騷擾、辱罵、人身攻擊或貶低他人的言論。
-- 性暗示的言語或圖像，以及不受歡迎的性關注。
-- 惡意挑釁、刻意干擾討論，或持續發表與主題無關的內容。
-- 未經同意公開他人的私人資訊，例如住址或電子郵件。
-- 在 issue、pull request 或 notebook 輸出中分享憑證、access token 或個人資料。
-- 其他在專業場合中會被合理認為不適當的行為。
+## Unacceptable behavior
 
-## 適用範圍
+- Harassment, insults, personal attacks, or demeaning comments.
+- Sexualized language or imagery, and unwelcome sexual attention.
+- Trolling, deliberately disrupting discussions, or repeatedly posting off-topic content.
+- Publishing other people's private information, such as a home address or email, without their consent.
+- Sharing credentials, access tokens, or personal data in issues, pull requests, or notebook outputs.
+- Any other conduct that would reasonably be considered inappropriate in a professional setting.
 
-本行為準則適用於所有專案空間，包括 issue、pull request 與討論區；當個人在公開場合代表本專案時亦適用。
+## Scope
 
-## 檢舉與處理
+This Code of Conduct applies in all project spaces, including issues, pull requests, and discussions. It also applies when an individual represents the project in public spaces.
 
-若你遭遇或目睹不可接受的行為，請在本儲存庫的 GitHub Issues 開一個 issue 描述發生的情況，並標記維護者。請勿在公開 issue 中放入私人資訊；只需說明你希望私下討論細節，維護者會安排適合的管道。
+## Reporting
 
-維護者可以移除、編輯或拒絕不符合本行為準則的留言、commit、程式碼、issue 與其他貢獻，也可以對其認為不適當、具威脅性或有害的行為，暫時或永久禁止該貢獻者參與。維護者會考量情境，並盡力做出公平且相稱的回應。
+If you experience or witness unacceptable behavior, open an issue in this repository's GitHub Issues describing what happened, and tag the maintainers. Do not put private information in a public issue; just say that you would like to discuss the details privately, and the maintainers will arrange a suitable channel.
 
-## 申訴
+Maintainers may remove, edit, or reject comments, commits, code, issues, and other contributions that do not follow this Code of Conduct, and may temporarily or permanently ban a contributor for behavior they consider inappropriate, threatening, or harmful. Maintainers will consider the context and try to respond fairly and proportionately.
 
-若你認為某項處理決定有誤，請在 GitHub Issues 開 issue 請求重新檢視，並說明你申訴的決定與理由；我們會盡可能由未參與原決定的維護者來複審。
+## Appeals
 
-## 出處
+If you believe a decision was wrong, open an issue in GitHub Issues to ask for a review, stating which decision you are appealing and why. Where possible, the review will be done by maintainers who were not involved in the original decision.
 
-本行為準則的理念改編自 [Contributor Covenant](https://www.contributor-covenant.org) 2.1 版。
+## Attribution
+
+The principles of this Code of Conduct are adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.
